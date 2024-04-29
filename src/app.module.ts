@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { BeehivesModule } from './beehives/beehives.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ConfigModule } from '@nestjs/config';
       authSource: 'admin',
       logging: true,
     }),
+    BeehivesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
