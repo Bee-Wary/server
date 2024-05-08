@@ -1,4 +1,7 @@
-import { Prop, Schema } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
+
+export type BeehiveDocument = HydratedDocument<Beehive>;
 
 @Schema()
 export class Beehive {
@@ -9,3 +12,5 @@ export class Beehive {
   @Prop()
   creationDate: Date;
 }
+
+export const BeehiveSchema = SchemaFactory.createForClass(Beehive)
